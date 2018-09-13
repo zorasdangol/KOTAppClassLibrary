@@ -50,6 +50,17 @@ namespace KOTAppClassLibrary.Models
 
         public string DisMode { get; set; }
 
+        private int _OrderSNO;
+        public int OrderSNO
+        {
+            get { return _OrderSNO; }
+            set
+            {
+                _OrderSNO = value;
+                OnPropertyChanged("OrderSNO");
+            }
+        }
+
         private double _DISCOUNT;
         public double DISCOUNT
         {
@@ -83,7 +94,10 @@ namespace KOTAppClassLibrary.Models
             }
         }
 
-        public KOTProd() { }
+        public KOTProd()
+        {
+            OrderSNO = 0;
+        }
 
         public KOTProd(KOTProd KOT)
         {
@@ -105,6 +119,7 @@ namespace KOTAppClassLibrary.Models
             NAMNT = KOT.NAMNT;
             DISCOUNT = KOT.DISCOUNT;
             DisMode = KOT.DisMode;
+            OrderSNO = KOT.OrderSNO;
 
         }
                 
