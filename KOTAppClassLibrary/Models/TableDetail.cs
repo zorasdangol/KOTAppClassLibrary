@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+
 using System.Text;
 
 namespace KOTAppClassLibrary.Models
@@ -9,6 +10,29 @@ namespace KOTAppClassLibrary.Models
         public string TableNo { get; set; }
         public string LayoutName { get; set; }
         public string ImageName { get; set; }
+
+        private String _TableColor;
+        public String TableColor
+        {
+            get { return _TableColor; }
+            set
+            {
+                _TableColor = value;
+                OnPropertyChanged("TableColor");
+            }
+        }
+
+        private bool _IsSelected;
+        public bool IsSelected
+        {
+            get { return _IsSelected; }
+            set
+            {
+                _IsSelected = value;
+                OnPropertyChanged("IsSelected");
+            }
+        }
+
         private bool _IsPacked;
         public bool IsPacked
         {

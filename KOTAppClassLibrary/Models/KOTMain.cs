@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace KOTAppClassLibrary.Models
@@ -10,7 +11,7 @@ namespace KOTAppClassLibrary.Models
         public int KOTID { get; set; }
         public string PHISCALID { get; set; }
         public string REFBILLED { get; set; }
-        public byte STATUS { get; set; }
+        public string STATUS { get; set; }
         public string BILLED { get; set; }
         public short PAX { get; set; }
         public double ROUNDUP { get; set; }
@@ -38,6 +39,8 @@ namespace KOTAppClassLibrary.Models
         public string BSDATE { get; set; }
         public DateTime TRNDATE { get; set; }
         public string TABLENO { get; set; }
+
+        public ObservableCollection<KOTProd> KotProdList { get; set; }
     }
     public class KOTMAINSTATUS
     {
@@ -46,5 +49,6 @@ namespace KOTAppClassLibrary.Models
         public string STATUS { get; set; } //DELETE,SPLIT,UPDATE,BILLED,ACTIVE,CANCELED,MERGE,KOTFLUSH
         public string REMARKS { get; set; }
         public DateTime EDATE { get; set; }
+        public string DIVISION { get; set; }
     }
 }

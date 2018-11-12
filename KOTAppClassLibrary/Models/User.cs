@@ -15,6 +15,8 @@ namespace KOTAppClassLibrary.Models
         public string ip3 { get; set; }
         public string ip4 { get; set; }
         public string Port { get; set; }
+        
+        public string Remarks { get; set; }
 
         //public string IPAddress { get; set; }
 
@@ -29,6 +31,7 @@ namespace KOTAppClassLibrary.Models
             Port = "";
             //IPAddress = "";
             UniqueID = "";
+            Remarks = "";
         }
     }
 }

@@ -19,7 +19,7 @@ namespace KOTAppClassLibrary.Models
         public byte ISBOT { get; set; }
         public string Remarks { get; set; }
         public string DispatchUser { get; set; }
-        public DateTime DispatchTime { get; set; }
+        public DateTime? DispatchTime { get; set; }
         public byte KitchenDispatch { get; set; }
         public string KOTTIME { get; set; }
         //public double NAMNT { get; set; }
@@ -38,10 +38,10 @@ namespace KOTAppClassLibrary.Models
         public double RATE { get; set; }
         public double AltQty { get; set; }
         public double RealQty { get; set; }
-        public double Quantity { get; set; }
+        //public double Quantity { get; set; }
         public string UNIT { get; set; }
         public string MCODE { get; set; }
-        public DateTime TRNDATE { get; set; }
+        public DateTime? TRNDATE { get; set; }
         public string TABLENO { get; set; }
         public string PAX { get; set; }
         public string WAITERNAME { get; set; }
@@ -49,6 +49,28 @@ namespace KOTAppClassLibrary.Models
         public string DESCA { get; set; }
 
         public string DisMode { get; set; }
+        
+        private double _Quantity;
+        public double Quantity
+        {
+            get { return _Quantity; }
+            set
+            {
+                _Quantity = value;
+                OnPropertyChanged("Quantity");
+            }
+        }
+
+        private double _DecQuantity;
+        public double DecQuantity
+        {
+            get { return _DecQuantity; }
+            set
+            {
+                _DecQuantity = value;
+                OnPropertyChanged("DecQuantity");
+            }
+        }
 
         private int _OrderSNO;
         public int OrderSNO
@@ -94,9 +116,43 @@ namespace KOTAppClassLibrary.Models
             }
         }
 
+        private bool _IsVisible;
+        public bool IsVisible
+        {
+            get { return _IsVisible; }
+            set
+            {
+                _IsVisible = value;
+                OnPropertyChanged("IsVisible");
+            }
+        }
+
         public KOTProd()
         {
+            this.MCODE = "";
+            this.DESCA = "";
+            this.ISBOT = 0;
+            SNO = 0;
+            Quantity = 0;
+            PAX = "0";
+            ItemDesc = "";
+            TRNDATE = DateTime.Today.Date;
+            KOTTIME = "";
+            KOTID = 0;
+            UNIT = "";
+            RealQty = 0;
+            REALRATE = 0;
+            RATE = 0;
+            AMOUNT = 0;
+            NAMNT = 0;
+            DISCOUNT = 0;
+            DisMode = "";
             OrderSNO = 0;
+            DecQuantity = 0;
+            TABLENO = "";
+            OrderSNO = 0;
+            DispatchTime = null;
+            Remarks = "";
         }
 
         public KOTProd(KOTProd KOT)
@@ -120,6 +176,9 @@ namespace KOTAppClassLibrary.Models
             DISCOUNT = KOT.DISCOUNT;
             DisMode = KOT.DisMode;
             OrderSNO = KOT.OrderSNO;
+            DecQuantity = 0;
+            TABLENO = KOT.TABLENO;
+            Remarks = KOT.Remarks;
 
         }
                 
