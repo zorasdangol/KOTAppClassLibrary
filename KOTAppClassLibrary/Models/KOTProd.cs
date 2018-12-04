@@ -153,6 +153,8 @@ namespace KOTAppClassLibrary.Models
             OrderSNO = 0;
             DispatchTime = null;
             Remarks = "";
+            KOT = "0";
+            IsVisible = false;
         }
 
         public KOTProd(KOTProd KOT)
@@ -179,6 +181,7 @@ namespace KOTAppClassLibrary.Models
             DecQuantity = 0;
             TABLENO = KOT.TABLENO;
             Remarks = KOT.Remarks;
+            IsVisible = KOT.IsVisible;
 
         }
                 

@@ -50,8 +50,6 @@ namespace KOTAppClassLibrary.Models
             get { return _Description; }
             set
             {
-                if (value == null)
-                    return;
                 _Description = value;
                 OnPropertyChanged("Description");
             }
